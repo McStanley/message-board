@@ -1,12 +1,51 @@
 body {
-  padding: 50px;
-  font:
-    14px 'Lucida Grande',
-    Helvetica,
-    Arial,
-    sans-serif;
+  max-width: 1000px;
+  margin: auto;
+  padding: 10px;
+  font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00b7ff;
+header {
+  text-align: center;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+.messages-list {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message-container {
+  padding: 10px;
+  border-left: 2px solid blue;
+  background: linear-gradient(90deg, #0000ff0f, transparent);
+}
+
+.message-author {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.message-author > img {
+  height: 20px;
+}
+
+.message-date {
+  font-style: italic;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    padding: 25px;
+  }
 }

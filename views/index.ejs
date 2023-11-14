@@ -7,7 +7,28 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <header>
+      <h1><%= title %></h1>
+      <p>
+        Welcome to
+        <%= title %>
+      </p>
+    </header>
+    <main>
+      <ul class="messages-list">
+        <% messages.forEach(message => { %>
+        <li>
+          <article class="message-container">
+            <div class="message-author">
+              <img src="/images/user.svg" alt="Author" />
+              <p><%= message.author %></p>
+            </div>
+            <small class="message-date"><%= message.date %></small>
+            <p><%= message.text %></p>
+          </article>
+        </li>
+        <% }) %>
+      </ul>
+    </main>
   </body>
 </html>
