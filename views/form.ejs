@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1><%= title %></h1>
+      <p>Submit your message</p>
+    </header>
+    <main>
+      <form action="/new" method="post" class="form">
+        <div class="form-entry">
+          <label class="form-label" for="message-author">Your name:</label>
+          <input
+            class="form-field"
+            type="text"
+            name="messageAuthor"
+            id="message-author"
+            required
+            maxlength="64"
+          />
+        </div>
+        <div class="form-entry">
+          <label class="form-label" for="message-text">Your message:</label>
+          <textarea
+            class="form-field"
+            name="messageText"
+            id="message-text"
+            cols="30"
+            rows="10"
+            required
+            maxlength="512"
+          ></textarea>
+        </div>
+        <div class="form-buttons">
+          <a href="/"><button type="button">Cancel</button></a>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

@@ -9,6 +9,32 @@ header {
   text-align: center;
 }
 
+main {
+  margin-top: 50px;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  display: flex;
+  padding: 8px 24px;
+  font-size: inherit;
+  border-radius: 5px;
+  border-width: 1px;
+  cursor: pointer;
+  transition: background-color 150ms;
+}
+
+button:hover {
+  background-color: rgb(255, 203, 108);
+}
+
+textarea {
+  resize: vertical;
+}
+
 ul {
   padding-left: 0;
 }
@@ -17,8 +43,12 @@ li {
   list-style-type: none;
 }
 
+.form-link {
+  margin: auto;
+}
+
 .messages-list {
-  margin-top: 50px;
+  margin-top: 25px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -27,7 +57,8 @@ li {
 .message-container {
   padding: 10px;
   border-left: 2px solid blue;
-  background: linear-gradient(90deg, #0000ff0f, transparent);
+  background: linear-gradient(90deg, #0000ff12 60%, transparent);
+  overflow-wrap: anywhere;
 }
 
 .message-author {
@@ -42,6 +73,38 @@ li {
 
 .message-date {
   font-style: italic;
+}
+
+.form {
+  margin: auto;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-label {
+  font-size: 1.2rem;
+}
+
+.form-field {
+  padding: 5px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: dashed;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 @media screen and (min-width: 768px) {
