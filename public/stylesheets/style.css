@@ -43,6 +43,11 @@ li {
   list-style-type: none;
 }
 
+.pushpin {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
 .form-link {
   margin: auto;
 }
