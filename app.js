@@ -3,9 +3,24 @@ const express = require('express');
 const createError = require('http-errors');
 const logger = require('morgan');
 const path = require('path');
+const mongoose = require('mongoose');
 
 const indexRouter = require('./routes/index');
 const formRouter = require('./routes/form');
+
+require('dotenv').config();
+
+mongoose.set('strictQuery', false);
+
+const { DATABASE_URI } = process.env;
+
+(async () => {
+  try {
+    await mongoose.connect(DATABASE_URI);
+  } catch (error) {
+    console.error(error);
+  }
+})();
 
 const app = express();
 

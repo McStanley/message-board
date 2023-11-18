@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 
-/* eslint-disable no-console */
 /* eslint-disable no-use-before-define */
 
 /**
  * Module dependencies.
  */
 
-const debug = require('debug')('mini-message-board:server');
+const debug = require('debug')('message-board:server');
 const http = require('http');
 const app = require('../app');
 

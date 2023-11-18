@@ -2,20 +2,23 @@ const express = require('express');
 
 const router = express.Router();
 
-const messages = require('../data/messages');
+const Message = require('../models/Message');
 
 router.get('/', (req, res, next) => {
   res.render('form', { title: 'Mini Message Board' });
 });
 
-router.post('/', (req, res, next) => {
-  messages.push({
-    text: req.body.messageText,
-    author: req.body.messageAuthor,
-    date: new Date(),
-  });
+router.post('/', async (req, res, next) => {
+  try {
+    await Message.create({
+      text: req.body.messageText,
+      author: req.body.messageAuthor,
+    });
 
-  res.redirect('/');
+    res.redirect('/');
+  } catch (error) {
+    next(new Error('Could not submit the message. Try again later.'));
+  }
 });
 
 module.exports = router;

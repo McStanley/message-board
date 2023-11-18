@@ -24,7 +24,9 @@
               <img src="/images/user.svg" alt="Author" />
               <p><%= message.author %></p>
             </div>
-            <small class="message-date"><%= message.date %></small>
+            <small class="message-date">
+              <%= message.date.toLocaleString() %>
+            </small>
             <p><%= message.text %></p>
           </article>
         </li>
